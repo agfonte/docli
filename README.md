@@ -1,9 +1,13 @@
 # docli - Docker Compose Central Management
 The `docli` script is a useful tool that allows you to manage multiple docker compose stacks with a single command. Using an 'inventory' file, you can organize your stacks into groups and perform operations on them in a streamlined way.
 
-## Features
-1. Parses an 'inventory' file to understand the organization of your docker compose groups and stacks using associative arrays for easy access to the specific groups/stacks
-2. Allows operations like `up` (start), `down` (stop), and `create`, to be executed on specific groups or all groups available in the inventory.
+## Desing
+1. Validates that the 'inventory' file exists
+2. Parses the arguments using a while to iterate over them and save the parameters as flags
+3. Parses an 'inventory' file to understand the organization of your docker compose groups and stacks using associative arrays for easy access to the specific groups/stacks
+4. Does another validation round to check that the combination of arguments makes sense and can be executable
+5. Then determines the list of groups/stacks to apply the action
+6. Apply the operations `up` (start), `down` (stop), and `create` to the specific groups/stacks
 
 ## Usage
 You can use the tool using the following patterns:
